@@ -1,8 +1,13 @@
+const fullname = "Muhammet İkbal" 
+
+
 function Header(){
     return (
-    <div>
-        <h1>Header</h1>
-    </div> 
+    <>
+        <div>
+            <h2>Merhaba {fullname} </h2>
+        </div> 
+    </>
     );
 }
 
