@@ -1,22 +1,21 @@
-import Header from './components/Header'
-import Login from './components/Login'
+// import Header from './components/Header'
+// import Login from './components/Login'
+import User from './components/User'
 
 let isLoggedin = true;
 
+const user = {
+  name : "Muhammet İkbal",
+  surname : "Yakupoğlu",
+  age : 21
+}
+
 function App() {
   return (
-    <>
-      <div className="App">
-        {isLoggedin ? <Header/> : <Login/>}
-      </div>
       <div>
-        <p>Farklı Div açmak istiyorsak Fragment Kullanabiliriz.</p>
+        {isLoggedin ? <User title = "Kullanıcı" data = {user} friends = {["Ahmet", "Ali", "Mehmet", "Ayşe"]}/> : null}
       </div>
-      <div className="myClass">
-        <p>JSX'de class isimlerini className ile verebiliriz.</p>
-      </div>
-    </>
-  )
+  );
 }
 
 export default App
