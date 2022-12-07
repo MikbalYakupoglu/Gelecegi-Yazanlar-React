@@ -1,19 +1,17 @@
 // import Header from './components/Header'
 // import Login from './components/Login'
+import Counter from './components/Counter';
 import User from './components/User'
-
-let isLoggedin = true;
-
-const user = {
-  name : "Muhammet İkbal",
-  surname : "Yakupoğlu",
-  age : 21
-}
+import Colors from './components/Colors'
+import Form from './components/Form';
 
 function App() {
   return (
       <div>
-        {isLoggedin ? <User title = "Kullanıcı" data = {user} friends = {["Ahmet", "Ali", "Mehmet", "Ayşe"]}/> : null}
+        {/* <User/> */}
+        {/* <Counter/> */}
+        {/* <Colors/> */}
+        <Form/>
       </div>
   );
 }

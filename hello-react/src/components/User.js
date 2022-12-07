@@ -1,37 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
-function User({title, data, friends }) {
+function User() {
+    const [user, setUser] = useState({ name: "Muhammet", age: 21 })
     return (
         <div>
-            <div><h5>{title}</h5></div>
-            <div>Ad : {data.name}</div>
-            <div>Soyad : {data.surname}</div>
-            <div>Yaş : {data.age}</div>
+            <h2>User</h2>
+            {user.name} {user.age}
+            <br />
+            <br />
             <div>
-                <h5>Arkadaşları</h5>
-                {
-                    friends.map((friend, i) => {
-                        return <div key={i}>{friend}</div>
-                    })
-                }
+                <button onClick={() => setUser({ ...user, name: "Ahmet" })}>İsmi Değiştir</button>
+                <button onClick={() => setUser({ ...user, age: 25 })}>Yaşı Değiştir</button>
             </div>
+
         </div>
     )
-}
-
-User.propTypes = {
-    title : PropTypes.string.isRequired,
-    data : PropTypes.exact({
-        name : PropTypes.string,
-        surname : PropTypes.string,
-        age : PropTypes.number
-    }),
-    friends : PropTypes.arrayOf(PropTypes.string)
-}
-
-User.defaultProps = {
-    title : "Kişi"
 }
 
 export default User
